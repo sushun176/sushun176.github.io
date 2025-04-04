@@ -76,10 +76,19 @@
     <!-- Core JS-->
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
-
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body id="page-top">
+    <!-- Language Switcher -->
+    <div class="container text-center mb-4">
+        <button class="language-toggle" onclick="switchLanguage('zh')">中文</button>
+        <button class="language-toggle" onclick="switchLanguage('en')">English</button>
+    </div>
     <!-- Navigation-->
     <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
         <div class="container px-5">
@@ -93,16 +102,20 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#home">HOME</a>
+                        <a class="nav-link me-lg-3" href="#home" class="content" data-lang="en">HOME</a>
+                        <a class="nav-link me-lg-3 hidden" href="#home" class="content" data-lang="zh">主页</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
+                        <a class="nav-link me-lg-3" href="#awards" class="content" data-lang="en">AWARDS</a>
+                        <a class="nav-link me-lg-3 hidden" href="#awards" class="content" data-lang="zh">奖项</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#experience">EXPERIENCE</a>
+                        <a class="nav-link me-lg-3" href="#experience" class="content" data-lang="en">EXPERIENCE</a>
+                        <a class="nav-link me-lg-3 hidden" href="#experience" class="content" data-lang="zh">经历</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#publications">PUBLICATIONS</a>
+                        <a class="nav-link me-lg-3" href="#publications" class="content" data-lang="en">PUBLICATIONS</a>
+                        <a class="nav-link me-lg-3 hidden" href="#publications" class="content" data-lang="zh">出版物</a>
                     </li>
                 </ul>
             </div>
@@ -131,7 +144,8 @@
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="home">
         <div class="container px-5">
             <header>
-                <h2 id="home-subtitle"> </h2>
+                <h2 id="home-subtitle" class="content" data-lang="en">Welcome to my homepage</h2>
+                <h2 id="home-subtitle" class="content hidden" data-lang="zh">欢迎来到我的个人主页</h2>
                 <!-- <span class="bi bi-list"></span> -->
             </header>
             <div class="main-body" id="home-md"></div>
@@ -143,7 +157,8 @@
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
         <div class="container px-5">
             <header>
-                <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>
+                <h2 id="awards-subtitle" class="content" data-lang="en"><i class="bi bi-award-fill"></i>AWARDS</h2>
+                <h2 id="awards-subtitle" class="content hidden" data-lang="zh"><i class="bi bi-award-fill"></i>奖项</h2>
             </header>
             <div class="main-body" id="awards-md"></div>
 
@@ -155,7 +170,8 @@
     <section class="bg-gradient-primary-to-secondary-dark mt5 md5" id="experience">
         <div class="container px-5">
             <header>
-                <h2 id="experience-subtitle"><i class="bi bi-briefcase-fill"></i> EXPERIENCE </h2>
+                <h2 id="publications-subtitle" class="content" data-lang="en"><i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS</h2>
+                <h2 id="publications-subtitle" class="content hidden" data-lang="zh"><i class="bi bi-file-text-fill"></i>&nbsp;出版物</h2>
             </header>
             <div class="main-body" id="experience-md"></div>
         </div>
@@ -186,7 +202,41 @@
             </div>
         </div>
     </footer>
+    <script>
+        function switchLanguage(lang) {
+            // 显示或隐藏语言内容
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                if (content.getAttribute('data-lang') === lang) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
 
+            // 更新标题或其他元素的内容，如果需要
+            if (lang === 'zh') {
+                document.title = "个人主页"; // 可根据需要修改标题
+            } else {
+                document.title = "Personal Homepage"; // 可根据需要修改标题
+            }
+        }
+
+        // 页面加载时根据本地存储选择语言
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = localStorage.getItem('language') || 'en'; // 默认英文
+            switchLanguage(lang);
+        });
+
+        // 存储用户选择
+        document.querySelectorAll('.language-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.textContent === '中文' ? 'zh' : 'en';
+                localStorage.setItem('language', lang);
+                switchLanguage(lang);
+            });
+        });
+    </script>
 </body>
 
 </html>
