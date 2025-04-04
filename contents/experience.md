@@ -1,21 +1,26 @@
-### **Software Engineer Intern**  
-**January 2025 – June 2025 | ByteDance**  
+### **基于深度学习的中医文本要素表示与关系分析方法研究（国家科学自然基金项目）**  
+**2023.06-至今 | 学生负责人**  
 
-Worked on the development and optimization of large-scale recommendation systems, focusing on algorithm improvements and system efficiency enhancements. Contributed to real-time data processing pipelines and model optimization for personalized content delivery.
+**项目描述**：项目旨在通过先进的自然语言处理技术，提取和分析中医文献中的关键要素及其相互关系。该项目将结合深度学习模型，构建中医领域特有的知识图谱，提升中医知识的可视化和应用效率，为中医研究提供数据驱动的支持。
+ **职能描述**：通过手工经方医案获取和网络经方医案获取结合GAN生成的手段来收集数据。利用文本分类任务来对数据进行分类处理，主要包括主体属性、症状属性等的分类，目前已产出两篇SCI论文均依托于该基金项目。
 
-#### Key Contributions:  
-- Developed and optimized recommendation algorithms to enhance user engagement and content relevance.  
-- Designed and implemented real-time data processing workflows to improve model inference efficiency.  
-- Conducted A/B testing and performance analysis to refine recommendation strategies based on user behavior data.  
 
----
+### ** 生物名称字典（企业合作项目）**  
+**2023.06-2023.10     | 核心成员**  
 
-### **软件工程师实习生**  
-**2025年1月 – 2025年6月 | 字节跳动**  
+**项目描述**：优化科研数据检索，对中科院生物名称数据进行清洗并汇总为JSON数据。支持名称检索、名称匹配，名称解析，数据展示并导出。
+ **职能描述**：对系统的需求分析和结构进行基本设计。使用基本的算法来实现基本的检索、分类任务。
 
-负责大规模推荐系统的开发与优化，专注于算法改进和系统效率提升。参与实时数据处理管道的构建，并优化模型推理流程，以提升个性化内容推荐效果。
+### **开远数字花卉连农带农服务展示平台（华为合作项目）**  
+**2023.06-2023.11  | 学生负责人**  
 
-#### 主要贡献:  
-- 研发并优化推荐算法，提高用户互动率和内容相关性。  
-- 设计并实现实时数据处理流程，提升模型推理的计算效率。  
-- 进行A/B测试与性能分析，基于用户行为数据优化推荐策略。
+**项目描述**：通过平台调用预先安装于农场温室的监控，采集田间作物图像。由平台传输导入到后台进行计算，计算完成后回传计算数据到平台上进行展示。主要内容包括使用AI图像识别技术进行目标检测计数等。
+ **职能描述**：利用农场的监控采集的图像，基于基本的深度学习技术，利用目标检测技术，使用yolov5做的花卉识别，包括识别花卉数量，位置等等。
+
+
+### **染色体核型分析在遗传病诊断中的应用研究（企业合作项目）**  
+**2024.11-至今  | 算法唯一完成人**  
+
+**项目描述**：本项目聚焦染色体核型分析技术在遗传病诊断中的临床应用，通过优化核型分析流程、建立标准化操作规范，提升检测准确率与效率。项目结合高通量测序技术与传统核型分析方法，开发了自动化染色体核型分析软件，实现了染色体异常的快速识别与分类，为临床遗传咨询和干预提供了科学依据。
+ **职能描述**：样本处理与质量控制：负责血液样本的采集、培养、制片及G显带染色，确保核型分析样本质量；核型分析与异常识别：运用显微镜和自动化分析软件，完成染色体核型计数、形态分析及结构异常识别软件优化与算法开发：参与自动化核型分析算法的优化，提升染色体分割、配对及异常检测的准确性；临床数据整理与分析：整理核型分析结果，结合临床信息撰写报告，并参与项目数据统计与论文撰写。
+
